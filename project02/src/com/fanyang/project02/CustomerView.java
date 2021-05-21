@@ -42,16 +42,16 @@ public class CustomerView {
             switch (chooses) {
                 case 1:
                     addNewCustomer();
-                    continue;
+                    break;
                 case 2:
                     modifyCustomer();
-                    continue;
+                    break;
                 case 3:
                     deleteCustomer();
-                    continue;
+                    break;
                 case 4:
                     listAllCustomers();
-                    continue;
+                    break;
                 case 5:
                     System.out.println("请输入y/n确认是否退出");
                     String choose = scanner.next();
@@ -61,7 +61,7 @@ public class CustomerView {
                     } else if (choose.equals("n") || choose.equals("N")) {
                         System.out.println("成功取消退出");
                     }
-                    continue;
+                    break;
                 default:
                     System.out.println("请重新选择");
                     continue label;
