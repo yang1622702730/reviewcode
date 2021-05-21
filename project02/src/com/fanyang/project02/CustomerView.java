@@ -55,10 +55,10 @@ public class CustomerView {
                 case 5:
                     System.out.println("请输入y/n确认是否退出");
                     String choose = scanner.next();
-                    if (choose == "y" || choose == "Y") {
+                    if (choose.equals("y") || choose.equals("Y")) {
                         System.out.println("正在结束程序");
                         isFlog = false;
-                    } else if (choose == "n" || choose == "N") {
+                    } else if (choose.equals("n") || choose.equals("N")) {
                         System.out.println("成功取消退出");
                     }
                     continue;
@@ -70,6 +70,13 @@ public class CustomerView {
         }
     }
 
+    /**
+     * @Description: 添加客户信息
+     * @Prame: []
+     * @return: void
+     * @author: FanYang
+     * @time:
+     */
     private void addNewCustomer() {
         Customer customer = new Customer();
         System.out.println("请输入需要添加的客户的名字");
@@ -97,10 +104,55 @@ public class CustomerView {
         }
     }
 
+    /**
+     * @Description:修改用户信息
+     * @Prame: []
+     * @return: void
+     * @author: FanYang
+     * @time:
+     */
     private void modifyCustomer() {
+        System.out.println("输入你需要修改的用户ID");
+        int index = scanner.nextInt();
+        Customer customer = new Customer();
+        System.out.println("输入你需要修改的信息");
+        System.out.println("输入1，修改用户名字");
+        System.out.println("输入2，修改用户性别");
+        System.out.println("输入3，修改用户年纪");
+        System.out.println("输入4，修改用户电话号码");
+        System.out.println("输入5，修改用户邮箱");
+        int choose = scanner.nextInt();
+        switch (choose){
+            case 1:
+                System.out.println("请输入新的用户名");
+                customer.setName(scanner.next());
+                break;
+            case 2:
+                System.out.println("请输入新的性别");
+                customer.setName(scanner.next());
+                break;
+            case 3:
+                System.out.println("请输入新的年纪");
+                customer.setName(scanner.next());
+                break;
+            case 4:
+                System.out.println("请输入新的用户名");
+                customer.setName(scanner.next());
+            case 5:
+                System.out.println("请输入新的用户名");
+                customer.setName(scanner.next());
 
+        }
+        customerList.replaceCustomer(index,customer);
     }
 
+    /**
+     * @Description: 根据提供的ID删除用户信息
+     * @Prame: []
+     * @return: void
+     * @author: FanYang
+     * @time:
+     */
     public void deleteCustomer() {
         System.out.println("请输入需要删除的用户的id");
         System.out.println("输入-1退出");
@@ -115,10 +167,10 @@ public class CustomerView {
         } else if (deleteIndex == -1) {
             System.out.println("输入y确认退出,输入n取消退出");
             String choose = scanner.next();
-            if (choose == "y" || choose == "Y") {
+            if (choose.equals("y") || choose.equals("Y")) {
                 System.out.println("退出成功");
                 return;
-            } else if (choose == "n" || choose == "N") {
+            } else if (choose.equals("n") || choose.equals("N")) {
                 System.out.println("取消退出中");
             }
         } else {
@@ -131,7 +183,7 @@ public class CustomerView {
     private void listAllCustomers() {
         Customer[] customers = customerList.getAllCustomers();
         System.out.println(customerList.getTotal());
-        if (customers.length == 0) {
+        if (customerList.getTotal() == 0) {
             System.out.println("没有客户信息");
         } else {
             System.out.println("ID\t姓名\t性别\t年龄\t\t电话\t\t邮箱");

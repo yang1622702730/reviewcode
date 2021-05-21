@@ -63,8 +63,10 @@ public class CustomerList {
         if (index >= 0 && index < customers.length) {
             for (int i = index; i < customers.length - 1; i++) {
                 customers[i] = customers[i + 1];
-                return true;
             }
+//            customers[total- 1] = new Customer("test",'n',21,"2144","12414");
+              customers[total--] = null;
+            return true;
         }
         return false;
     }
