@@ -107,7 +107,7 @@ public class CustomerView {
     }
 
     /**
-     * @Description:修改用户信息
+     * @Description:修改用户的信息
      * @Prame: []
      * @return: void
      * @author: FanYang
