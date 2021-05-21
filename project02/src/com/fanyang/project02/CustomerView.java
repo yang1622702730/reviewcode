@@ -73,7 +73,7 @@ public class CustomerView {
     }
 
     /**
-     * @Description: 添加客户信息
+     * @Description: 添加客户的信息
      * @Prame: []
      * @return: void
      * @author: FanYang
