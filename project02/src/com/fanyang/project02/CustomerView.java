@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @create: 2021-05-19 15:07
  */
 public class CustomerView {
-    private CustomerList customerList = new CustomerList(2);
+    private CustomerList customerList = new CustomerList(10);
 
     public static void main(String[] args) {
         CustomerView customerview = new CustomerView();
@@ -44,7 +44,7 @@ public class CustomerView {
                     addNewCustomer();
                     continue;
                 case 2:
-                    System.out.println();
+                    modifyCustomer();
                     continue;
                 case 3:
                     deleteCustomer();
@@ -67,6 +67,8 @@ public class CustomerView {
                     continue label;
 
             }
+
+
         }
     }
 
@@ -114,36 +116,60 @@ public class CustomerView {
     private void modifyCustomer() {
         System.out.println("输入你需要修改的用户ID");
         int index = scanner.nextInt();
-        Customer customer = new Customer();
-        System.out.println("输入你需要修改的信息");
-        System.out.println("输入1，修改用户名字");
-        System.out.println("输入2，修改用户性别");
-        System.out.println("输入3，修改用户年纪");
-        System.out.println("输入4，修改用户电话号码");
-        System.out.println("输入5，修改用户邮箱");
-        int choose = scanner.nextInt();
-        switch (choose){
-            case 1:
-                System.out.println("请输入新的用户名");
-                customer.setName(scanner.next());
-                break;
-            case 2:
-                System.out.println("请输入新的性别");
-                customer.setName(scanner.next());
-                break;
-            case 3:
-                System.out.println("请输入新的年纪");
-                customer.setName(scanner.next());
-                break;
-            case 4:
-                System.out.println("请输入新的用户名");
-                customer.setName(scanner.next());
-            case 5:
-                System.out.println("请输入新的用户名");
-                customer.setName(scanner.next());
-
+        Customer customer = customerList.getCustomer(index - 1);
+        boolean isFlog = true;
+        while (isFlog) {
+            System.out.println("输入你需要修改的信息");
+            System.out.println("输入1，修改用户名字");
+            System.out.println("输入2，修改用户性别");
+            System.out.println("输入3，修改用户年纪");
+            System.out.println("输入4，修改用户电话号码");
+            System.out.println("输入5，修改用户邮箱");
+            System.out.println("输入6，结束修改");
+            int choose = scanner.nextInt();
+            switch (choose) {
+                case 1:
+                    System.out.println("现有的用户名为" + customer.getName());
+                    System.out.println("请输入新的用户名");
+                    customer.setName(scanner.next());
+                    break;
+                case 2:
+                    System.out.println("现有的性别为" + customer.getGender());
+                    System.out.println("请输入新的性别");
+                    String gender = scanner.next();
+                    char gender1 = gender.charAt(0);
+                    customer.setGender(gender1);
+                    break;
+                case 3:
+                    System.out.println("现有的年纪为" + customer.getAge());
+                    System.out.println("请输入新的年纪");
+                    customer.setAge(scanner.nextInt());
+                    break;
+                case 4:
+                    System.out.println("现有的电话为" + customer.getPhone());
+                    System.out.println("请输入新的电话");
+                    customer.setPhone(scanner.next());
+                    break;
+                case 5:
+                    System.out.println("现有的邮箱为" + customer.getEmail());
+                    System.out.println("请输入新的邮箱");
+                    customer.setEmail(scanner.next());
+                    break;
+                case 6:
+                    System.out.println("真在结束修改");
+                    isFlog = false;
+                    break;
+                default:
+                    System.out.println("输入错误");
+            }
         }
-        customerList.replaceCustomer(index,customer);
+        boolean flag = customerList.replaceCustomer(index, customer);
+        if (flag) {
+            System.out
+                    .println("--------------添加完成----------------");
+        } else {
+            System.out.println("------------记录已满,无法添加--------");
+        }
     }
 
     /**
@@ -188,8 +214,8 @@ public class CustomerView {
         } else {
             System.out.println("ID\t姓名\t性别\t年龄\t\t电话\t\t邮箱");
             for (int i = 0; i < customerList.getTotal(); i++) {
-                System.out.println((i + 1) + "\t" + customers[i].getName() + "\t" + customers[i].getGender() + "\t" + customers[i].getAge()
-                        + "\t\t" + customers[i].getPhone() + "\t" + customers[i].getEmail());
+                System.out.println((i + 1) + "\t" + customers[i].getName() + "\t\t" + customers[i].getGender() + "\t     " + customers[i].getAge()
+                        + "\t\t   " + customers[i].getPhone() + "\t\t  " + customers[i].getEmail());
 
             }
         }
