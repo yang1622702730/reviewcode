@@ -10,6 +10,7 @@
       <change afterPath="$PROJECT_DIR$/../day9/day9.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../day9/src/com/fanyang/study/Circle.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../day9/src/com/fanyang/study/Cylinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day9/src/com/fanyang/test/CylinderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/CustomerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/CustomerList.class" afterDir="false" />
