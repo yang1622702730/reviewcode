@@ -65,7 +65,7 @@ public class CustomerList {
                 customers[i] = customers[i + 1];
             }
 //            customers[total- 1] = new Customer("test",'n',21,"2144","12414");
-              customers[total--] = null;
+              customers[--total] = null;
             return true;
         }
         return false;

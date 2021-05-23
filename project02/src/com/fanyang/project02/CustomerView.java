@@ -163,7 +163,7 @@ public class CustomerView {
                     System.out.println("输入错误");
             }
         }
-        boolean flag = customerList.replaceCustomer(index, customer);
+        boolean flag = customerList.replaceCustomer(index-1, customer);
         if (flag) {
             System.out
                     .println("--------------添加完成----------------");
@@ -208,9 +208,10 @@ public class CustomerView {
 
     private void listAllCustomers() {
         Customer[] customers = customerList.getAllCustomers();
+        System.out.println("----------展示用户列表----------\n");
         System.out.println(customerList.getTotal());
         if (customerList.getTotal() == 0) {
-            System.out.println("没有客户信息");
+            System.out.println("----------没有客户信息----------\n");
         } else {
             System.out.println("ID\t姓名\t性别\t年龄\t\t电话\t\t邮箱");
             for (int i = 0; i < customerList.getTotal(); i++) {
