@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e3253f-c6e4-4276-ad05-525842fdbded" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../day9/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day9/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day9/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day9/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day9/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day9/day9.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day9/src/com/fanyang/study/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day9/src/com/fanyang/study/Cylinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day9/src/com/fanyang/test/CylinderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/CustomerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/CustomerList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/CustomerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project2/com/fanyang/project02/CustomerView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fanyang/project02/CustomerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fanyang/project02/CustomerList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fanyang/project02/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fanyang/project02/CustomerView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,8 +108,16 @@
       <workItem from="1621594249901" duration="4683000" />
       <workItem from="1621650573852" duration="1819000" />
       <workItem from="1621729134857" duration="1088000" />
-      <workItem from="1621748487099" duration="6178000" />
+      <workItem from="1621748487099" duration="6825000" />
     </task>
+    <task id="LOCAL-00001" summary="project second commit!!!">
+      <created>1621773454169</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1621773454169</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,5 +135,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project second commit!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="project second commit!!!" />
   </component>
 </project>
