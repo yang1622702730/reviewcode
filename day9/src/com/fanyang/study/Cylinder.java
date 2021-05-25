@@ -17,7 +17,26 @@ public class Cylinder extends Circle{
     public double getLength(){
         return this.length;
     }
+
+    /**
+     * @Description: 求圆柱的体积
+     * @Prame: []
+     * @return: double
+     * @author: FanYang
+     * @time:
+     */
     public double findVolume(){
-        return findArea()*length;
+        return super.findArea()*length;
+    }
+
+    /**
+     * @Description: 求圆柱的表面积
+     * @Prame: []
+     * @return: double
+     * @author: FanYang
+     * @time:
+     */
+    public double findArea(){
+        return  (2*Math.PI*getRadius()*getLength()+2*Math.PI*getRadius()*getRadius());
     }
 }
