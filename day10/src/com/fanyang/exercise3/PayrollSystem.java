@@ -24,45 +24,32 @@ import java.util.Scanner;
  */
 public class PayrollSystem {
     public static void main(String[] args) {
-        Employee[] employee = new Employee[2];
+        Employee[] employee = new Employee[5];
         Scanner scanner = new Scanner(System.in);
-        System.out.println("请输入当月的月份");
-        int month = scanner.nextInt();
-//        for (int i=0;i<employee.length;i++){
-////            System.out.println("请输入生日");     //用户自定义输入信息
-////            MyDate myDate = new MyDate();
-////            System.out.println("请先输入日份");
-////            int day = scanner.nextInt();
-////            myDate.setDay(day);
-////            System.out.println("请先输入月份");
-////            int month = scanner.nextInt();
-////            myDate.setMonth(month);
-////            System.out.println("请先输入年份");
-////            int year = scanner.nextInt();
-////            myDate.setYear(year);
-//            MyDate myDate = new MyDate(1999,10,15); //默认值
-//            System.out.println(myDate.toString());
-////            employee[i] = new SalariedEmployee("yf",21,myDate,5000.0);
-//            employee[i]=new HourlyEmployee("yf",21,myDate,50,20);
-//            System.out.println(employee[i].earnings());
-//            System.out.println(employee[i].toString());
-////            employee[i].setNumber(2);
-////            employee[i].setName("yf");
-////            employee[i].setMyDate(myDate);
-////            System.out.println(i);
-//            System.out.println("***********");
-//
-//        }
-        employee[0] = new SalariedEmployee("杨凡",22,new MyDate(1999,10,21),5000.0);
-        employee[1] = new HourlyEmployee("李爽",21,new MyDate(1999,10,15),50,20);
-        for(int i=0;i<employee.length;i++){
-            System.out.println(employee[i].toString());
-            if (month==employee[i].getMyDate().getMonth()){
-                System.out.println("生日月,奖励一百块");
-                System.out.println(employee[i].earnings()+100);
-                continue;
-            }
+        for (int i=0;i<employee.length;i++){
+//            System.out.println("请输入生日");     //用户自定义输入信息
+//            MyDate myDate = new MyDate();
+//            System.out.println("请先输入日份");
+//            int day = scanner.nextInt();
+//            myDate.setDay(day);
+//            System.out.println("请先输入月份");
+//            int month = scanner.nextInt();
+//            myDate.setMonth(month);
+//            System.out.println("请先输入年份");
+//            int year = scanner.nextInt();
+//            myDate.setYear(year);
+            MyDate myDate = new MyDate(1999,10,15); //默认值
+            System.out.println(myDate.toString());
+//            employee[i] = new SalariedEmployee("yf",21,myDate,5000.0);
+            employee[i]=new HourlyEmployee("yf",21,myDate,50,20);
             System.out.println(employee[i].earnings());
+            System.out.println(employee[i].toString());
+//            employee[i].setNumber(2);
+//            employee[i].setName("yf");
+//            employee[i].setMyDate(myDate);
+//            System.out.println(i);
+            System.out.println("***********");
+
         }
     }
 
