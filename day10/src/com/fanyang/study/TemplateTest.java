@@ -10,6 +10,7 @@ public class TemplateTest {
     public static void main(String[] args){
         Template1 template1 = new Template1();
         template1.time();
+
 }
 }
 
