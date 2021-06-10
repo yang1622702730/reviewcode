@@ -46,12 +46,12 @@ public class Programmer extends Employee{
         this.equipment = equipment;
     }
 
-    @Override
-    public String toString() {
-        return "Programmer{" +
-                "memberId=" + memberId +
-                ", status=" + status +
-                ", equipment=" + equipment +
-                "} " + super.toString();
-    }
+//    @Override
+//    public String toString() {
+//        return "Programmer{" +
+//                "memberId=" + memberId +
+//                ", status=" + status +
+//                ", equipment=" + equipment.toString() +
+//                "} " + super.toString();
+//    }
 }

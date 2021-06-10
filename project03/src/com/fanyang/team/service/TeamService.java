@@ -1,5 +1,7 @@
 package com.fanyang.team.service;
 
+import com.fanyang.team.domain.Architect;
+import com.fanyang.team.domain.Designer;
 import com.fanyang.team.domain.Employee;
 import com.fanyang.team.domain.Programmer;
 
@@ -17,29 +19,99 @@ public class TeamService {
 
     public Programmer[] getTeam() {
         Programmer[] new_team = new Programmer[total];
-        for (int i = 0;i<total;i++){
+        for (int i = 0; i < total; i++) {
             team[i] = new_team[i];
         }
         return new_team;
     }
-    public void addMember(Employee employee) throws TeamException{
-        if (total>=MAX_MEMBER){
+
+    /**
+     * @Description: 向团队中添加成员
+     * @Prame: [employee]
+     * @return: void
+     * @author: FanYang
+     * @time:  
+     */ 
+    public void addMember(Employee employee) throws TeamException {
+        if (total >= MAX_MEMBER) {
             throw new TeamException("成员已经满了");
         }
         if (!(employee instanceof Programmer)) {
             throw new TeamException("这个人不是开发人员，不能加入团队");
         }
-        Programmer programmer = (Programmer)employee;
-        if (programmer.getStatus().getNAME().equals("BUSY")){
+        Programmer programmer = (Programmer) employee;
+        if (programmer.getStatus().getNAME().equals("BUSY")) {
             throw new TeamException("该成员已经是其它团队的成员");
         }
-        if (programmer.getStatus().getNAME().equals("VOCATION")){
-            throw new TeamException("该员工正在休假中，暂时无法加入团队")
+        if (programmer.getStatus().getNAME().equals("VOCATION")) {
+            throw new TeamException("该员工正在休假中，暂时无法加入团队");
         }
-        counter ++;
-        total ++;
-    }
-    public void removeMember(int numberId) throws TeamException{
+        if (isExist(programmer)) {
+            throw new TeamException("该员工已经在这个团队中了");
 
+        }
+        int numberOfArch = 0;
+        int numberOfDesi = 0;
+        int numberOfPro = 0;
+        for (int i = 0; i < total; i++) {
+            if (team[i] instanceof Architect) {
+                numberOfArch++;
+            } else if (team[i] instanceof Designer) {
+                numberOfDesi++;
+            } else if (team[i] instanceof Programmer) {
+                numberOfPro++;
+            }
+        }
+        if (programmer instanceof Architect) {
+            if (numberOfArch > 1) {
+                throw new TeamException("只能有一个架构师");
+            }
+        }
+        if (programmer instanceof Designer) {
+            if (numberOfDesi > 2) {
+                throw new TeamException("只能有两个设计师");
+            }
+        }
+        if (programmer instanceof Programmer) {
+            if (numberOfPro > 3) {
+                throw new TeamException("只能有三个程序员");
+            }
+        }
+        programmer.setStatus(Status.BUSY);
+        programmer.setMemberId(counter++);
+        team[total++] = programmer;
+    }
+    
+    /**
+     * @Description: 从团队中删除成员
+     * @Prame: [numberId]
+     * @return: void
+     * @author: FanYang
+     * @time:  
+     */ 
+    public void removeMember(int numberId) throws TeamException {
+        int n;
+        for(n=0;n<total;n++){
+            if (team[n].getMemberId() == numberId){
+                team[n].setStatus(Status.FREE);
+                break;
+            }
+        }
+        if (n>=total){
+            throw new TeamException("没有这个成员");
+        }
+        for (int i = n;i<total;i++){
+            team[i] = team[i+1];
+        }
+        team[--total] =null;
+    }
+
+    public boolean isExist(Programmer programmer) {
+        for (int i = 0; i < total; i++) {
+            if (programmer.getId() == team[i].getId()) {
+                return true;
+            }
+        }
+        return false;
     }
 }

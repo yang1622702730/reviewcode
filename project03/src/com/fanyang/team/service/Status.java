@@ -8,12 +8,12 @@ package com.fanyang.team.service;
  */
 public class Status {
     private final String NAME;
-    private Status(String name){
+    Status(String name){
         this.NAME = name;
     }
-    private static final Status FREE = new Status("FREE");
-    private static final Status BUSY = new Status("BUSY");
-    private static final Status VOCATION = new Status("VOCATION");
+    public static final Status FREE = new Status("FREE");
+    public static final Status BUSY = new Status("BUSY");
+    public static final Status VOCATION = new Status("VOCATION");
 
     public String getNAME() {
         return NAME;
