@@ -100,7 +100,7 @@ public class TeamService {
         if (n>=total){
             throw new TeamException("没有这个成员");
         }
-        for (int i = n;i<total;i++){
+        for (int i = n;i<total-1;i++){
             team[i] = team[i+1];
         }
         team[--total] =null;
