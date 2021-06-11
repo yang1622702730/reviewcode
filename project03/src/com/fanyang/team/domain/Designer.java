@@ -22,10 +22,11 @@ public class Designer extends Programmer{
         this.bonus = bonus;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Designer{" +
-//                "bonus=" + bonus +
-//                "} " + super.toString();
-//    }
+    public String getWork(){
+        return "设计师\t"+getStatus()+ "\t"+getBonus()+"\t"  +"\t\t";
+    }
+    @Override
+    public String toString() {
+        return prints()+getWork()+ getEquipment().getDescription();
+    }
 }

@@ -10,7 +10,7 @@ import com.fanyang.team.service.Status;
  */
 public class Programmer extends Employee{
     private int memberId;
-    private Status status; // status: Status = FREE
+    private Status status = Status.FREE; // status: Status = FREE
     private Equipment equipment;
 
 
@@ -45,13 +45,14 @@ public class Programmer extends Employee{
     public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Programmer{" +
-//                "memberId=" + memberId +
-//                ", status=" + status +
-//                ", equipment=" + equipment.toString() +
-//                "} " + super.toString();
-//    }
+    public String getWork(){
+        return "程序员\t"+getStatus()+ "\t" +"\t\t" +"\t\t";
+    }
+    public String getAEquipment(){
+        return equipment.toString();
+    }
+    @Override
+    public String toString() {
+        return prints()+getWork()+ getEquipment().getDescription();
+    }
 }

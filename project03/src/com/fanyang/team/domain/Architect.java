@@ -21,10 +21,11 @@ public class Architect extends Designer{
         this.stock = stock;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Architect{" +
-//                "stock=" + stock +
-//                "} " + super.toString();
-//    }
+    public String getWork(){
+        return "架构师\t"+getStatus()+ "\t"+getBonus()+"\t" +getStock()+"\t";
+    }
+    @Override
+    public String toString() {
+        return prints()+getWork()+ getEquipment().getDescription();
+    }
 }

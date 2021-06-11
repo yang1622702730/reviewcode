@@ -52,11 +52,9 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", salary=" + salary +
-                '}';
+        return prints();
+    }
+    public String prints(){
+        return id +"\t"+ name + '\t' + age +"\t\t" + salary+"\t";
     }
 }

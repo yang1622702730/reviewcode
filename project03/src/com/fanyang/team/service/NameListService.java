@@ -33,29 +33,29 @@ public class NameListService {
             switch (type){
                 case "10":  //普通员工
                     employees[i] = new Employee(id,name,age,salary);
-                    System.out.println(employees[i].toString());
-                    System.out.println("-----------------------");
-                    continue;
+//                    System.out.println(employees[i].toString());
+//                    System.out.println("-----------------------");
+                    break;
                 case "11": //程序员
                     equipment =creatEquipment(i);
                     employees[i] = new Programmer(id,name,age,salary,equipment);
-                    System.out.println(employees[i].toString());
-                    System.out.println("-----------------------");
+//                    System.out.println(employees[i].toString());
+//                    System.out.println("-----------------------");
                     break;
                 case "12": //设计师
                     equipment=creatEquipment(i);
                     bonus = Double.parseDouble(EMPLOYEES[i][5]);
                     employees[i] = new Designer(id,name,age,salary,equipment,bonus);
-                    System.out.println(employees[i].toString());
-                    System.out.println("-----------------------");
+//                    System.out.println(employees[i].toString());
+//                    System.out.println("-----------------------");
                     break;
                 case "13": //架构师
                     stock = Integer.parseInt(EMPLOYEES[i][6]);
                     equipment=creatEquipment(i);
                     bonus = Double.parseDouble(EMPLOYEES[i][5]);
                     employees[i] = new Architect(id,name,age,salary,equipment,bonus,stock);
-                    System.out.println(employees[i].toString());
-                    System.out.println("-----------------------");
+//                    System.out.println(employees[i].toString());
+//                    System.out.println("-----------------------");
                     break;
             }
         }
