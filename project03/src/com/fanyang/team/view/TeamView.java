@@ -129,9 +129,9 @@ public class TeamView {
             System.out.println("TID/ID\t姓名\t年龄\t工资\t职位\t奖金\t股票");
         }
 
-        /*for (Programmer p : team) {
+        for (Programmer p : team) {
             System.out.println(" " + p.getDetailsForTeam());
-        }*/
+        }
         System.out
                 .println("-----------------------------------------------------");
     }
