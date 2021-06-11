@@ -20,7 +20,7 @@ public class TeamService {
     public Programmer[] getTeam() {
         Programmer[] new_team = new Programmer[total];
         for (int i = 0; i < total; i++) {
-            team[i] = new_team[i];
+            new_team[i] = team[i];
         }
         return new_team;
     }
