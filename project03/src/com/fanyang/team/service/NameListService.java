@@ -11,6 +11,7 @@ import static com.fanyang.team.service.Data.*;
  * @author: FanYang
  * @create: 2021-06-10 14:17
  */
+
 public class NameListService {
     public static void main(String[] args) {
         NameListService nameListService = new NameListService();
