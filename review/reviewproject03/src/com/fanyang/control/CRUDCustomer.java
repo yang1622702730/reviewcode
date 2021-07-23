@@ -40,7 +40,11 @@ public class CRUDCustomer {
         return new Customer(name, gender, age, phoneNumber, email);
     }
 
-
+    private void inputEnter(String input){
+        if (input.equals("")){
+            System.out.println("没有做出更改,保留原始值");
+        }
+    }
     /**
      * @Description: 修改用户的信息
      * @Param: [customer]
@@ -49,7 +53,53 @@ public class CRUDCustomer {
      * @time: 2021/7/22 14:19
      */
     public Customer modifyInformation(Customer customer) {
-        System.out.println("请输入名字，如果不修改请输入N");
+        System.out.println("请输入名字，如果不修改请输入Enter");
+        scanner.nextLine();
+        String name = scanner.nextLine();
+        if (name.length()>0){
+            customer.setName(name);
+        }else {
+            inputEnter(name);
+        }
+//        if (name.equals("")) {
+//            System.out.println("没修改名字");
+//        } else {
+//            customer.setName(name);
+//        }
+        System.out.println("请输入性别,如果不修改请输入Enter");
+        String gender = scanner.nextLine();
+
+//        if (gender.equals("")) {
+//            System.out.println("没修改性别");
+//        } else {
+//            customer.setGender(gender);
+//        }
+        System.out.println("请输入年纪,如果不修改请输入Enter");
+        int age;
+        String ages = scanner.nextLine();
+
+        if (ages.equals("")) {
+            System.out.println("没修改年纪");
+        } else {
+            age = Integer.parseInt(ages);
+            customer.setAge(age);
+        }
+        System.out.println("请输入电话号码,如果不修改请输入Enter");
+        String phoneNumber = scanner.nextLine();
+        if (phoneNumber.equals("")) {
+            System.out.println("没修改电话");
+        } else {
+            customer.setPhoneNumber(phoneNumber);
+        }
+        System.out.println("请输入电子邮箱,如果不修改请输入Enter");
+        String email = scanner.nextLine();
+        if (email.equals("")) {
+            System.out.println("没修改电子邮箱");
+        } else {
+            customer.setEmail(email);
+        }
+        return customer;
+       /* System.out.println("请输入名字，如果不修改请输入N");
         String name = scanner.next();
         if (name.equals("N")) {
             System.out.println("没修改名字");
@@ -87,7 +137,7 @@ public class CRUDCustomer {
         } else {
             customer.setEmail(email);
         }
-        return customer;
+        return customer;*/
     }
 
     /**
